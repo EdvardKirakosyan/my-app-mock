@@ -7,6 +7,13 @@ import { ServersComponent } from './servers/servers.component';
   standalone: true,
   imports: [RouterOutlet, ServersComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  // styleUrl: './app.component.scss',
+  styles: [
+    `
+      h3 {
+        color: red;
+      }
+    `,
+  ],
 })
 export class AppComponent {}
