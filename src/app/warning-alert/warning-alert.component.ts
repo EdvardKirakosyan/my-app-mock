@@ -4,6 +4,14 @@ import { Component } from '@angular/core';
   selector: 'app-warning-alert',
   standalone: true,
   templateUrl: './warning-alert.component.html',
-  styleUrl: './warning-alert.component.scss',
+  styles: [
+    `
+      p {
+        padding: 20px;
+        background-color: mistyrose;
+        border: 1px solid red;
+      }
+    `,
+  ],
 })
 export class WarningAlertComponent {}
