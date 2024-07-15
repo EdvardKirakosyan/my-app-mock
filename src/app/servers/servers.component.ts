@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ServerComponent } from '../server/server.component';
 
 @Component({
@@ -6,13 +7,14 @@ import { ServerComponent } from '../server/server.component';
   // selector: '.app-servers',
   selector: 'app-servers',
   standalone: true,
-  imports: [ServerComponent],
+  imports: [ServerComponent, FormsModule],
   templateUrl: `./servers.component.html`,
   styleUrl: './servers.component.scss',
 })
 export class ServersComponent {
   allowNewServer = false;
   serverCreationStatus = 'no server created';
+  serverName = 'test_server';
 
   constructor() {
     setTimeout(() => {
@@ -21,6 +23,11 @@ export class ServersComponent {
   }
 
   onCreateServer() {
-    this.serverCreationStatus = 'server was created';
+    this.serverCreationStatus =
+      'server was created! Name is ' + this.serverName;
   }
+
+  // onUpdateServerName(event: Event) {
+  //   this.serverName = (<HTMLInputElement>event.target).value;
+  // }
 }
