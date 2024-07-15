@@ -7,10 +7,20 @@ import { ServerComponent } from '../server/server.component';
   selector: 'app-servers',
   standalone: true,
   imports: [ServerComponent],
-  template: `
-    <app-server></app-server>
-    <app-server></app-server>
-  `,
+  templateUrl: `./servers.component.html`,
   styleUrl: './servers.component.scss',
 })
-export class ServersComponent {}
+export class ServersComponent {
+  allowNewServer = false;
+  serverCreationStatus = 'no server created';
+
+  constructor() {
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 2000);
+  }
+
+  onCreateServer() {
+    this.serverCreationStatus = 'server was created';
+  }
+}
