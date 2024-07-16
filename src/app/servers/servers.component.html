@@ -15,6 +15,6 @@
 <p>{{ serverCreationStatus }}</p>
 @if(serverCreated){
 <p>Server - {{ serverName }}</p>
+} @for (item of servers; track item) {
+<app-server></app-server>
 }
-<app-server></app-server>
-<app-server></app-server>

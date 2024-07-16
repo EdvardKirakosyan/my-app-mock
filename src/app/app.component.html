@@ -18,3 +18,15 @@
 <button class="btn btn-prymary" [disabled]="!username" (click)="onReset()">
   Reset USER
 </button>
+
+<button (click)="onToggle()" class="btn btn-primary">Display details</button>
+@if(showSecret) {
+<p>password is = tuna</p>
+} @for (logItem of log; track $index) {
+<div
+  [ngClass]="{ white: logItem >= 4 }"
+  [ngStyle]="{ backgroundColor: logItem >= 4 ? 'blue' : 'red' }"
+>
+  {{ logItem }}
+</div>
+}
