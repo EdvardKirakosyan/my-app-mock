@@ -11,3 +11,10 @@
 </div>
 <app-warning-alert></app-warning-alert>
 <app-success-alert></app-success-alert>
+<hr />
+<label>Username</label>
+<input type="text" class="form-control" [(ngModel)]="username" />
+<p>{{ username }}</p>
+<button class="btn btn-prymary" [disabled]="!username" (click)="onReset()">
+  Reset USER
+</button>

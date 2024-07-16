@@ -13,5 +13,8 @@
 <br />
 <p [innerText]="allowNewServer"></p>
 <p>{{ serverCreationStatus }}</p>
+@if(serverCreated){
+<p>Server - {{ serverName }}</p>
+}
 <app-server></app-server>
 <app-server></app-server>
